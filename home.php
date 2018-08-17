@@ -32,16 +32,20 @@
     <?php
     if (isset($_POST['nom'])) {
         $inom = $_POST['nom'];
-        $inom = preg_replace('/\?/', ' ', $inom);
-        $inom = preg_replace('/\//', ' ', $inom);
-        $inom = preg_replace('/\\\/', ' ', $inom);
+        $inom = preg_replace('/\?/', '', $inom);
+        $inom = preg_replace('/\//', '', $inom);
+        $inom = preg_replace('/\\\/', '', $inom);
+        $inom = preg_replace('/\./', '', $inom);
+        $inom = preg_replace('/\;/', '', $inom);
+        $inom = preg_replace('/\,/', '', $inom);
+        $inom = preg_replace('/\:/', '', $inom);
+        $inom = trim(htmlspecialchars($inom));
         $itier = $_POST['tier'];
         $itext = $_POST['text'];
         $stmt = $conn->prepare("SELECT * FROM teams WHERE name = '$inom'");
         $stmt->execute();
         $tiers = $stmt->fetchAll(PDO::FETCH_ASSOC);
         if (count($tiers) <= 0) {
-            $inom = $_POST['nom'];
             $stmt = $conn->prepare("INSERT INTO teams (name, Tier, team) VALUES (\"$inom\", \"$itier\", \"$itext\")");
             $stmt->execute();
             echo "<meta http-equiv=\'refresh\'  content=\'0;URL=home.php\'>";
