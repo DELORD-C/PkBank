@@ -1,0 +1,315 @@
+@import url('https://fonts.googleapis.com/css?family=Comfortaa|Julius+Sans+One|Monoton');
+
+body {
+    background: url('../src/bg.jpg') no-repeat left center fixed;
+    background-size: cover;
+    color: white;
+}
+
+.teams {
+    color: white;
+}
+
+a {
+    color: white;
+    text-decoration: none;
+}
+
+a:-webkit-any-link {
+    color: white;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.del-btn a:-webkit-any-link {
+    color: black;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.del-btn a {
+    color: black;
+}
+
+.tab-content {
+    grid-template-columns: 1fr 1fr 1fr;
+    width: 100%;
+}
+
+@media (max-width: 1650px) {
+    .tab-content {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media (max-width: 1100px) {
+    .tab-content {
+        grid-template-columns: 1fr;
+    }
+
+    .tab-list {
+    overflow: auto;
+    }
+}
+
+.team {
+    margin: 6px;
+    background-color: rgba(0, 0, 0, 0.8);
+    padding: 10px;
+    font-size: 1.1em;
+}
+
+.spoiler {
+    display: none;
+}
+
+.form {
+    text-align: right;
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    grid-gap: 10px;
+    margin-bottom: 10px;
+}
+
+.formu {
+    background-color: rgba(0, 0, 0, 0.8);
+    text-align: center;
+    padding: 20px;
+}
+
+.text {
+    height: 300px;
+    vertical-align: text-top;
+}
+
+
+
+
+
+
+.pkmn {
+    height: auto;
+    max-width: 15%;
+    align-self: center;
+
+}
+
+:required {
+    box-shadow: none;
+}
+
+.index__title {
+    text-transform: uppercase;
+    background-color: black;
+    padding: 5px 20px;
+}
+
+.btn {
+    margin: 0 4%;
+    width: 92.5%;
+    background-color: white;
+    color: rgb(7, 17, 34);
+    padding: 13px;
+    border: none;
+    text-transform: uppercase;
+    font-size: 1.05em;
+    font-weight: 600;
+    letter-spacing: 1px;
+}
+
+.btn:hover {
+    cursor: pointer;
+    background-color: #c4e8ea;
+}
+
+
+.connect {
+    position: absolute;
+    transform: translate(-50%, -50%);
+    top: 50vh;
+    left: 50vw;
+    background-color: rgba(0, 0, 0, 0.8);
+    grid-template-columns: 1fr;
+    width: 320px;
+    height: 292px;
+}
+
+.form__input {
+    position: relative;
+    top: 50px;
+}
+
+.form__btn {
+    position: relative;
+    top: 70px;
+}
+
+.connect__btn {
+    position: relative;
+    top: 130px;
+    box-sizing: border-box;
+    border: 5px solid white;
+    padding: 8px;
+    background-color: transparent;
+    color: white;
+}
+
+.connect__btn:hover {
+    border: 5px solid #c4e8ea;
+    background-color: #c4e8ea;
+    color: black;
+}
+
+.form__input {
+    background-color: transparent;
+    border: none;
+    border-bottom: 2px white solid;
+    color: white;
+    font-size: 1.3em;
+    width: 92%;
+    margin: 0 4%;
+}
+
+.header__title {
+    text-align: center;
+    color: white;
+    font-weight: bold;
+    font-size: 30px;
+    padding-top: 20px;
+    text-transform: uppercase;
+    font-family: sans-serif;
+}
+
+.header__title:hover {
+    color: #c4e8ea;
+    text-decoration: none;
+}
+
+.connect__header {
+    width: 100%;
+    text-align: center;
+    position: relative;
+    top: 20px;
+}
+
+.teamdisplay {
+    display: flex;
+    justify-content: space-around;
+}
+
+.tab-list {
+    text-transform: uppercase;
+    border-bottom: none;
+}
+
+.tab-list li {
+    margin: 0;
+    min-width: 150px;
+}
+
+.tab-list li:hover {
+    background-color: transparent;
+    border-radius: 0;
+    border: none;
+    cursor: pointer;
+    background-color: rgba(0, 0, 0, 0.3);
+}
+
+.tab-list .active {
+    border-radius: 0;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.6);
+    border: none;
+    box-shadow: none;
+}
+
+.tab-list .active:hover {
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 0;
+    border: none;
+    cursor: pointer;
+    box-shadow: none;
+}
+
+.tab-list {
+    color: white;
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+.tab-list:hover {
+    border-radius: none;
+}
+
+.home__title {
+    text-transform: uppercase;
+    background-color: rgba(0, 0, 0, 0.8);
+    padding: 5px 20px;
+    text-align: center;
+    padding: 15px;
+    font-size: 1.4em;
+    font-weight: 600;
+    border-bottom: 2px solid white;
+}
+
+.title__a {
+    color: white;
+}
+
+.title__a:hover {
+    color: #c4e8ea;
+    text-decoration: none;
+}
+
+.deconnection {
+    border-radius: 0;
+    background-color: white;
+    border: none;
+    text-transform: uppercase;
+    padding: 8px;
+    width: 100%;
+}
+
+.deconnection:hover {
+    cursor: pointer;
+    background-color: #c4e8ea;
+}
+
+.name {
+    font-size: 1.2em;
+}
+
+.team-btn {
+    border: none;
+    background-color: white;
+    text-transform: uppercase;
+    padding: 5px 15px;
+    font-size: 0.8em;
+    float: right;
+    margin-left: 10px;
+    cursor: pointer;
+}
+
+.team-btn:hover {
+    background-color: #c4e8ea;
+}
+
+.delete {
+    width: 100%;
+    background-color: white;
+    box-sizing: border-box;
+    border: 5px solid white;
+    color: black;
+    border: none;
+    padding: 7px;
+    margin-top: 20px;
+    cursor: pointer;
+    text-transform: uppercase;
+}
+
+.delete:hover {
+    background-color: #c4e8ea;
+}
+
+.hidden {
+    display: none;
+}
