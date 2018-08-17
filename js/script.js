@@ -5,10 +5,10 @@ $(document).ready(function(){
 $('.team-btn').click(function (){
   var target = '.' + $(this).attr('target');
   if($(target).css("display") != 'block') {
-    $(target).fadeIn();
+    $(target).show(500);
   }
   else {
-    $(target).fadeOut();
+    $(target).hide(500);
   }
 });
 
@@ -16,7 +16,6 @@ $('.copy-btn').click(function(e) {
   var target = $(this).attr('target');
   var value = $('#'+target).val();
   copyText(value);
-  alert('Team saved in clipboard !')
 });
 
 function copyText (text) {
@@ -34,3 +33,17 @@ function copyText (text) {
   document.body.removeChild(element);
 }
 
+$(document).mouseup(function (e) {
+  var container = $('.modal')
+  if (!container.is(e.target) && container.has(e.target).length === 0) {
+    container.hide(500)
+  }
+})
+$(document).on('keydown', function (e) {
+  if (e.keyCode === 27) {
+    $('.modal').hide(500)
+  }
+})
+$('.modal-close').click(function () {
+  $('.modal').hide(500)
+})
