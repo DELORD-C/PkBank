@@ -9,7 +9,7 @@ $.fn.modal = function () {
     var target = '.' + this.getAttribute('data-target')
     setTimeout(function() {
       $(target).fadeIn();
-      $(target).css('display', 'grid');
+      $(target).css('display', 'flex');
     }, 500);
   })
 
@@ -32,14 +32,14 @@ $.fn.modal = function () {
     $('.tab-list')[0].style.gridTemplateColumns = cssinput
   }
 
-  function ContainerColumns (objet) {
-    var nbr = ((objet.childNodes[1].childNodes.length - 1) / 2)
-    var cssinput = ''
-    for (var i = 0; i < nbr; i++) {
-      cssinput += '1fr '
-    }
-    objet.childNodes[1].style.gridTemplateColumns = cssinput;
-  }
+  // function ContainerColumns (objet) {
+  //   var nbr = ((objet.childNodes[1].childNodes.length - 1) / 2)
+  //   var cssinput = ''
+  //   for (var i = 0; i < nbr; i++) {
+  //     cssinput += '1fr '
+  //   }
+  //   objet.childNodes[1].style.gridTemplateColumns = cssinput;
+  // }
 
   TabListColumns ();
 }

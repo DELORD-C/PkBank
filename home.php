@@ -80,7 +80,7 @@
     }
     ?>
     </ul>
-    <div class='teams'>
+    <div class='teams container'>
         <?php
     foreach($tiers as $key => $value) {
         $tier = $value['Tier'];
@@ -131,28 +131,30 @@
             $textt = preg_replace('/\n/', '<br/>', $text);
             $id = $team['ID'];
             echo "
-            <div class='team'>
-                <div class='team__header'>
-                    <h3 class='name'>Nom : $nom</h3>
-                    <button class='team-btn' target='spoiler-$nomm'>Spoiler</button>
-                    <button id='copy' class='team-btn copy-btn' target='$id'>Copy</button>
-                    <textarea id='$id' class='hidden' value='$text'>$text</textarea>
+            <div class='col-lg-4 col-md-6 col-sm-12'>
+                <div class='team col-12'>
+                    <div class='team__header'>
+                        <h3 class='name'>$nom</h3>
+                        <button class='team-btn' target='spoiler-$nomm'>Spoiler</button>
+                        <button id='copy' class='team-btn copy-btn' target='$id'>Copy</button>
+                        <textarea id='$id' class='hidden' value='$text'>$text</textarea>
+                    </div>
+                    <div class='teamdisplay' id='$id'>
+                        $sprites[0]
+                        $sprites[1]
+                        $sprites[2]
+                        $sprites[3]
+                        $sprites[4]
+                        $sprites[5]
+                    </div>
+                    <div class='spoiler spoiler-$nomm'>
+                        $textt";
+                        if (isset($_SESSION['pass']) && $_SESSION['pass'] == 1) {
+                            echo "<br/><a href='home.php?del=$id' class='del-btn'><button class='delete'>Delete</button></a>";
+                        }
+                        echo "
+                    </div>
                 </div>
-            <div class='teamdisplay' id='$id'>
-            $sprites[0]
-            $sprites[1]
-            $sprites[2]
-            $sprites[3]
-            $sprites[4]
-            $sprites[5]
-            </div>
-            <div class='spoiler spoiler-$nomm'>
-            $textt";
-            if (isset($_SESSION['pass']) && $_SESSION['pass'] == 1) {
-                echo "<br/><a href='home.php?del=$id' class='del-btn'><button class='delete'>Delete</button></a>";
-            }
-            echo "
-            </div>
             </div>
             ";
         }

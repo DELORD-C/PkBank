@@ -32,35 +32,30 @@ a:-webkit-any-link {
 }
 
 .tab-content {
-    grid-template-columns: 1fr 1fr 1fr;
+    flex-wrap: wrap;
+	flex-direction: flex-start;
+	align-items: flex-start;
     width: 100%;
-}
 
-@media (max-width: 1650px) {
-    .tab-content {
-        grid-template-columns: 1fr 1fr;
-    }
 }
 
 @media (max-width: 1100px) {
-    .tab-content {
-        grid-template-columns: 1fr;
-    }
-
     .tab-list {
     overflow: auto;
     }
 }
 
 .team {
-    margin: 6px;
     background-color: rgba(0, 0, 0, 0.8);
-    padding: 10px;
+    padding: 14px;
     font-size: 1.1em;
+    width: 500px;
+    margin: 1px;
 }
 
 .spoiler {
     display: none;
+    min-height: 1538px;
 }
 
 .form {
@@ -194,7 +189,7 @@ a:-webkit-any-link {
 .teamdisplay {
     display: flex;
     justify-content: space-around;
-    margin: 20px 0;
+    height: 120px;
 }
 
 .tab-list {
@@ -281,6 +276,8 @@ a:-webkit-any-link {
 .name {
     font-size: 1.2em;
     width: 100%;
+    max-height: 1.2em;
+    overflow: auto;
 }
 
 @media screen and (max-width: 560px)
@@ -319,9 +316,10 @@ a:-webkit-any-link {
     color: black;
     border: none;
     padding: 7px;
-    margin-top: 20px;
     cursor: pointer;
     text-transform: uppercase;
+    position: relative;
+    bottom: 0;
 }
 
 .delete:hover {
@@ -330,4 +328,8 @@ a:-webkit-any-link {
 
 .hidden {
     display: none;
+}
+
+.container {
+    grid-gap: 10px;
 }
