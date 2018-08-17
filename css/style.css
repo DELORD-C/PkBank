@@ -145,7 +145,7 @@ a:-webkit-any-link {
 
 .connect__btn {
     position: relative;
-    top: 126px;
+    top: 130px; /*126*/
     box-sizing: border-box;
     border: 5px solid white;
     padding: 8px;
