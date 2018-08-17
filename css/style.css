@@ -91,7 +91,6 @@ a:-webkit-any-link {
     height: auto;
     max-width: 15%;
     align-self: center;
-
 }
 
 :required {
@@ -146,7 +145,7 @@ a:-webkit-any-link {
 
 .connect__btn {
     position: relative;
-    top: 130px;
+    top: 126px;
     box-sizing: border-box;
     border: 5px solid white;
     padding: 8px;
@@ -195,6 +194,7 @@ a:-webkit-any-link {
 .teamdisplay {
     display: flex;
     justify-content: space-around;
+    margin: 20px 0;
 }
 
 .tab-list {
@@ -274,8 +274,20 @@ a:-webkit-any-link {
     background-color: #c4e8ea;
 }
 
+.team__header {
+    display: flex;
+}
+
 .name {
     font-size: 1.2em;
+    width: 100%;
+}
+
+@media screen and (max-width: 560px)
+{
+    .name {
+        font-size: 1em;
+    }
 }
 
 .team-btn {
@@ -284,9 +296,15 @@ a:-webkit-any-link {
     text-transform: uppercase;
     padding: 5px 15px;
     font-size: 0.8em;
-    float: right;
     margin-left: 10px;
     cursor: pointer;
+    min-height: 30px;
+    max-height: 34px;
+}
+
+.team-btn__group {
+    position: relative;
+    right: 0;
 }
 
 .team-btn:hover {
