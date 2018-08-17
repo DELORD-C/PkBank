@@ -59,10 +59,6 @@ a:-webkit-any-link {
     font-size: 1.1em;
 }
 
-.spoiler {
-    display: none;
-}
-
 .form {
     text-align: right;
     display: grid;
@@ -330,4 +326,17 @@ a:-webkit-any-link {
 
 .hidden {
     display: none;
+}
+
+
+.modal {
+    display: none;
+    background-color: black;
+    height: 50vh;
+    width: 30vw;
+}
+
+.modalin {
+    overflow: auto;
+    height: 100%;
 }

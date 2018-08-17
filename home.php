@@ -134,25 +134,30 @@
             <div class='team'>
                 <div class='team__header'>
                     <h3 class='name'>Nom : $nom</h3>
-                    <button class='team-btn' target='spoiler-$nomm'>Spoiler</button>
+                    <button class='team-btn' target='modal-$nomm'>More</button>
                     <button id='copy' class='team-btn copy-btn' target='$id'>Copy</button>
                     <textarea id='$id' class='hidden' value='$text'>$text</textarea>
                 </div>
-            <div class='teamdisplay' id='$id'>
-            $sprites[0]
-            $sprites[1]
-            $sprites[2]
-            $sprites[3]
-            $sprites[4]
-            $sprites[5]
+                <div class='teamdisplay' id='$id'>
+                $sprites[0]
+                $sprites[1]
+                $sprites[2]
+                $sprites[3]
+                $sprites[4]
+                $sprites[5]
+                </div>
             </div>
-            <div class='spoiler spoiler-$nomm'>
-            $textt";
+            <div class='modal modal-$nomm'>
+                <div class='modalin'>
+                <h3 class='name'>Nom : $nom</h3>
+                <button id='copy' class='team-btn copy-btn' target='$id'>Copy</button>
+                <button class='team-btn modal-close'>Close</button>
+                $textt";
             if (isset($_SESSION['pass']) && $_SESSION['pass'] == 1) {
                 echo "<br/><a href='home.php?del=$id' class='del-btn'><button class='delete'>Delete</button></a>";
             }
             echo "
-            </div>
+                </div>
             </div>
             ";
         }
