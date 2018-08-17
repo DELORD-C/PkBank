@@ -32,6 +32,9 @@
     <?php
     if (isset($_POST['nom'])) {
         $inom = $_POST['nom'];
+        $inom = preg_replace('/\?/', ' ', $inom);
+        $inom = preg_replace('/\//', ' ', $inom);
+        $inom = preg_replace('/\\\/', ' ', $inom);
         $itier = $_POST['tier'];
         $itext = $_POST['text'];
         $stmt = $conn->prepare("SELECT * FROM teams WHERE name = '$inom'");
@@ -121,14 +124,15 @@
                     $a++;
                 }
             }
-            $text = preg_replace('/\n/', '<br/>', $text);
+            $textt = preg_replace('/\n/', '<br/>', $text);
             $id = $team['ID'];
             echo "
             <div class='team'>
                 <div class='team__header'>
                     <h3 class='name'>Nom : $nom</h3>
                     <button class='team-btn' target='spoiler-$nomm'>Spoiler</button>
-                    <button id='copy' class='team-btn' target='$id'>Copy</button>
+                    <button id='copy' class='team-btn copy-btn' target='$id'>Copy</button>
+                    <textarea id='$id' class='hidden' value='$text'>$text</textarea>
                 </div>
             <div class='teamdisplay' id='$id'>
             $sprites[0]
@@ -139,7 +143,7 @@
             $sprites[5]
             </div>
             <div class='spoiler spoiler-$nomm'>
-            $text";
+            $textt";
             if (isset($_SESSION['pass']) && $_SESSION['pass'] == 1) {
                 echo "<br/><a href='home.php?del=$id' class='del-btn'><button class='delete'>Delete</button></a>";
             }
