@@ -1,13 +1,13 @@
 $.fn.modal = function () {
   $('.tab-element').click(function () {
     $('.tab-element').each(function () {
-      this.classList.remove('active')
-      var hidden = '.' + this.getAttribute('data-target')
-      $(hidden).fadeOut()
+      this.classList.remove('active');
+      var hidden = '.' + this.getAttribute('data-target');
+      $(hidden).fadeOut();
     })
-    this.classList.add('active')
-    var target = '.' + this.getAttribute('data-target')
-    setTimeout(function() {
+    this.classList.add('active');
+    var target = '.' + this.getAttribute('data-target');
+    setTimeout(function () {
       $(target).fadeIn();
       $(target).css('display', 'grid');
     }, 500);
@@ -23,23 +23,23 @@ $.fn.modal = function () {
     })
   })
 
-  function TabListColumns () {
+  function TabListColumns() {
     var nbr = ($('.tab-list')[0].getElementsByTagName('li')).length;
-    var cssinput = ''
+    var cssinput = '';
     for (var i = 0; i < nbr; i++) {
-      cssinput += '1fr '
+      cssinput += '1fr ';
     }
-    $('.tab-list')[0].style.gridTemplateColumns = cssinput
+    $('.tab-list')[0].style.gridTemplateColumns = cssinput;
   }
 
-  function ContainerColumns (objet) {
+  function ContainerColumns(objet) {
     var nbr = ((objet.childNodes[1].childNodes.length - 1) / 2)
-    var cssinput = ''
+    var cssinput = '';
     for (var i = 0; i < nbr; i++) {
-      cssinput += '1fr '
+      cssinput += '1fr ';
     }
     objet.childNodes[1].style.gridTemplateColumns = cssinput;
   }
 
-  TabListColumns ();
+  TabListColumns();
 }

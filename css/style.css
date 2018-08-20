@@ -53,7 +53,7 @@ a:-webkit-any-link {
 }
 
 .team {
-    margin: 6px;
+    margin: 3px;
     background-color: rgba(0, 0, 0, 0.8);
     padding: 10px;
     font-size: 1.1em;
@@ -314,8 +314,8 @@ a:-webkit-any-link {
     border: 5px solid white;
     color: black;
     border: none;
-    padding: 7px;
-    margin-top: 20px;
+    padding: 10px;
+    /* margin-top: 20px; */
     cursor: pointer;
     text-transform: uppercase;
 }
@@ -331,12 +331,55 @@ a:-webkit-any-link {
 
 .modal {
     display: none;
-    background-color: black;
-    height: 50vh;
-    width: 30vw;
+    /* background-color: rgba(0, 0, 0, 0.2); */
+    height: 60.1vh;
+    width: 40vw;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    top: 50vh;
+    left: 50vw;
 }
 
-.modalin {
+.modal .team {
+    background-color: rgba(0, 0, 0, 0.85);
+}
+
+.modal .name {
+    font-size: 1.5em;
+    padding: 3px;
+}
+
+.modal-team {
     overflow: auto;
-    height: 100%;
+    height: 40vh;
+    margin: 20px 0;
+}
+
+.popover {
+    background-color: rgba(0, 0, 0, 0.8);
+    border: 1px solid white;
+    z-index: 25;
+}
+
+.popover-body {
+    color: white;
+}
+
+.bs-popover-right .arrow::after {
+    border-right-color: white;
+}
+
+.bs-popover-left .arrow::after {
+    border-left-color: white;
+}
+
+.black {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 50;
+    background-color: rgba(0, 0, 0, 0.7);
+    height: 100vh;
+    width: 100vw;
 }
