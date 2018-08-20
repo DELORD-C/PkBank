@@ -12,8 +12,8 @@ $('.modal-btn').click(function () {
 });
 
 $('.copy-btn').click(function (event) {
-  var target = $(this).attr('target');
-  var value = $('#' + target).val();
+  var thisTarget = $(this).attr('target');
+  var value = $('#' + thisTarget).val();
   copyText(value);
   $(event.target).popover('show');
   setTimeout(function () {
