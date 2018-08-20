@@ -10,8 +10,8 @@
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/modal.css">
     <link rel="stylesheet" href="css/style.css">
-    <script src="src/popper.js"></script>
-    <script src="src/tooltip.js"></script>
+    <script src="js/popper.js"></script>
+    <script src="js/tooltip.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/1.5.10/clipboard.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
@@ -23,7 +23,7 @@
     <?php
     include_once('php/config.php');
     if (isset($_SESSION['pass']) && $_SESSION['pass'] == 1) {
-        echo "<div><a href='index.php?dc=1'><button class='deconnection'>Deconnection</button></a></div>";
+        echo "<div><a href='index.php?dc=1'><button class='deconnection'>Disconnect</button></a></div>";
     }
     ?>
     <div class='home__title'>
@@ -76,7 +76,7 @@
         ";
     }
     if (isset($_SESSION['pass']) && $_SESSION['pass'] == 1) {
-        echo "<li class = 'tab-element' data-target='tab-input'>Ajout</li>";
+        echo "<li class = 'tab-element' data-target='tab-input'>Add</li>";
     }
     ?>
     </ul>
@@ -135,7 +135,7 @@
                 <div class='team__header'>
                     <h3 class='name'>$nom</h3>
                     <button class='team-btn modal-btn' target='modal-$nomm'>More</button>
-                    <button id='copy' class='team-btn copy-btn' target='$id' data-content='copied!'>Copy</button>
+                    <button id='copy' class='team-btn copy-btn' target='$id' data-content='Copied!'>Copy</button>
                     <textarea id='$id' class='hidden' value='$text'>$text</textarea>
                 </div>
                 <div class='teamdisplay' id='$id'>
@@ -151,7 +151,7 @@
                 <div class='modalin team'>
                     <div class='team__header'>
                         <h3 class='name'>$nom</h3>
-                        <button id='copy' class='team-btn copy-btn' target='$id' data-content='copied!'>Copy</button>
+                        <button id='copy' class='team-btn copy-btn' target='$id' data-content='Copied!'>Copy</button>
                         <button class='team-btn modal-close'>Close</button>
                     </div>
                     <div class='modal-team'>
@@ -174,8 +174,8 @@
             <p></p>
             <form class='formu' action='home.php' method='post'>
                 <div class='form'>
-                    Nom
-                    <input type='text' name='nom' placeholder="Nom de l'équipe" required> Tier
+                    Name
+                    <input type='text' name='nom' placeholder="Team's name" required> Tier
                     <select name='tier' required>
                         <option value='OU'>OU</option>
                         <option value='Ubers'>Ubers</option>
@@ -190,7 +190,7 @@
                     Import
                     <textarea class='text' name='text' required></textarea>
                 </div>
-                <input type='submit'>
+                <input type='submit' value='Send'>
             </form>
         </div>
     </div>
