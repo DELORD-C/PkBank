@@ -38,9 +38,9 @@ if (isset($_POST['pass']) && md5($_POST['pass']) == 'd6445d158adbb44555da4965ff8
         </header>
         <form action='index.php' method='post'>
             <input class='form__input' type='password' name='pass' required placeholder='Password'>
-            <input class='form__btn btn' type='submit' value='Connection'>
+            <input class='form__btn btn' type='submit' value='Connect'>
         </form>
-        <a href='home.php'><button class='connect__btn btn'>Invite</button></a>
+        <a href='home.php'><button class='connect__btn btn'>Guest</button></a>
     </div>
 </body>
 </html>

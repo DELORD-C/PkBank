@@ -338,7 +338,7 @@ body {
   .hidden-laptop {
     display: none;
   }
-
+  
   .visible-laptop {
     display: block;
   }
@@ -347,11 +347,11 @@ body {
   .hidden-tablet {
     display: none;
   }
-
+  
   .hidden-laptop {
     display: none;
   }
-
+  
   .visible-tablet {
     display: block;
   }
@@ -360,11 +360,11 @@ body {
   .hidden-tablet {
     display: none;
   }
-
+  
   .hidden-laptop {
     display: none;
   }
-
+  
   .visible-tablet {
     display: block;
   }
@@ -373,15 +373,15 @@ body {
   .hidden-phone {
     display: none;
   }
-
+  
   .hidden-laptop {
     display: none;
   }
-
+  
   .hidden-tablet {
     display: none;
   }
-
+  
   .visible-phone {
     display: block;
   }
@@ -390,19 +390,19 @@ body {
   .visible-print-desktop {
     display: none;
   }
-
+  
   .visible-print-laptop {
     display: none;
   }
-
+  
   .visible-print-tablet {
     display: none;
   }
-
+  
   .visible-print-phone {
     display: none;
   }
-
+  
   .hidden-print-desktop {
     display: none;
   }
@@ -416,7 +416,7 @@ body {
   .hidden-print-laptop {
     display: none;
   }
-
+  
   .visible-print-laptop {
     display: block;
   }
@@ -425,11 +425,11 @@ body {
   .hidden-print-tablet {
     display: none;
   }
-
+  
   .hidden-print-laptop {
     display: none;
   }
-
+  
   .visible-print-tablet {
     display: block;
   }
@@ -438,11 +438,11 @@ body {
   .hidden-print-tablet {
     display: none;
   }
-
+  
   .hidden-print-laptop {
     display: none;
   }
-
+  
   .visible-print-tablet {
     display: block;
   }
@@ -451,15 +451,15 @@ body {
   .hidden-print-phone {
     display: none;
   }
-
+  
   .hidden-print-laptop {
     display: none;
   }
-
+  
   .hidden-print-tablet {
     display: none;
   }
-
+  
   .visible-print-phone {
     display: block;
   }
@@ -532,19 +532,19 @@ nav ul li ul li a:hover {
     overflow: hidden;
     transition: all 0.5s ease;
   }
-
+  
   nav ul {
     margin: 0;
     padding: 0;
     z-index: 15;
   }
-
+  
   nav ul li {
     float: none;
     position: relative;
     margin: 0;
   }
-
+  
   nav ul li a {
     display: table;
     margin: 0;
@@ -554,11 +554,11 @@ nav ul li ul li a:hover {
     text-shadow: none;
     width: 100%;
   }
-
+  
   nav ul li:hover ul {
     max-height: 0;
   }
-
+  
   nav ul li ul {
     max-height: 0;
     opacity: 1;
@@ -568,11 +568,11 @@ nav ul li ul li a:hover {
     box-shadow: inset 0px 2px 2px rgba(0, 0, 0, 0.5);
     transition-duration: 2s;
   }
-
+  
   nav ul li ul li {
     margin: 0;
   }
-
+  
   nav ul li ul li a {
     color: white;
     padding-left: 20px;
@@ -614,7 +614,7 @@ nav ul li ul li a:hover {
   .arrow:hover {
     cursor: pointer;
   }
-
+  
   .rotate {
     transition-duration: 0.3s;
     transform: rotate(-180deg);
@@ -656,74 +656,8 @@ nav ul li ul li a:hover {
   color: #353535;
   background: #969696;
 }
-
-.modal {
-  background: #4d4d4d;
-  border-radius: 10px;
-  box-shadow: 0 6px 26px 0 rgba(0, 0, 0, 0.75);
-  padding: 0;
-  width: 30%;
-  color: white;
-  z-index: 9999;
-  left: 35%;
-  display: none;
-  position: absolute;
-  padding: 10px;
-}
-@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
-  .modal {
-    background: rgba(0, 0, 0, 0.4);
-    height: 200%;
-  }
-}
-.modal .inner-wrapper {
-  padding: 18px;
-  padding-bottom: 15px;
-}
-.modal .inner-wrapper p {
-  font-family: "Courier New", Courier, monospace;
-}
-.modal .buttons {
-  padding: 10px 20px 12px;
-  border-radius: 0 0 5px 5px;
-  border-top: 1px solid #cccccc;
-}
-.modal .buttons button {
-  font-size: 16px;
-  display: inline-block;
-  margin-top: 20px;
-  margin: 0;
-}
-.modal .buttons button.submit {
-  float: right;
-}
-.modal h1 {
-  margin-left: 10px;
-}
-
-@media screen and (max-device-width: 480px), screen and (min-device-pixel-ratio: 2) {
-  .modal {
-    margin-top: 0;
-    top: 20px;
-    left: 50%;
-    margin-left: -150px;
-    margin-top: -50px;
-    min-height: 100px;
-    min-width: 300px;
-    position: fixed;
-    top: 35%;
-    width: 300px;
-  }
-  .modal button, .modal button.submit, .modal button.cancel {
-    width: auto;
-    font-size: 15px;
-    padding-left: 1em;
-    padding-right: 1em;
-  }
-
-  .buttons button, .buttons .button, .buttons input[type=submit] {
-    font-weight: bold;
-  }
+.buttons button, .buttons .button, .buttons input[type=submit] {
+  font-weight: bold;
 }
 .tab-list {
   list-style: none;

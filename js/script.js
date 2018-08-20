@@ -1,25 +1,27 @@
-$(document).ready(function(){
+$(document).ready(function () {
   $('.modal').modal();
 });
 
-$('.team-btn').click(function (){
+$('.modal-btn').click(function () {
   var target = '.' + $(this).attr('target');
-  if($(target).css("display") != 'block') {
-    $(target).fadeIn();
-  }
-  else {
-    $(target).fadeOut();
+  if ($(target).css("display") != 'block') {
+    $(target).show();
+    $('.modal').css('z-index', '100');
+    $('.black').css('display', 'block');
   }
 });
 
-$('.copy-btn').click(function(e) {
+$('.copy-btn').click(function (event) {
   var target = $(this).attr('target');
-  var value = $('#'+target).val();
+  var value = $('#' + target).val();
   copyText(value);
-  alert('Team saved in clipboard !')
+  $(event.target).popover('show');
+  setTimeout(function () {
+    $(event.target).popover('hide');
+  }, 700);
 });
 
-function copyText (text) {
+function copyText(text) {
   // Create the textarea input to hold our text.
   const element = document.createElement('textarea');
   element.value = text;
@@ -34,3 +36,22 @@ function copyText (text) {
   document.body.removeChild(element);
 }
 
+$(document).mouseup(function (e) {
+  var container = $('.modal');
+  if (!container.is(e.target) && container.has(e.target).length === 0) {
+    container.hide();
+    $('.black').css('display', 'none');
+  }
+});
+
+$(document).on('keydown', function (e) {
+  if (e.keyCode === 27) {
+    $('.modal').hide();
+    $('.black').css('display', 'none');
+  }
+});
+
+$('.modal-close').click(function () {
+  $('.modal').hide();
+  $('.black').css('display', 'none');
+});
