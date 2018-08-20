@@ -358,7 +358,7 @@ a:-webkit-any-link {
 .popover {
     background-color: rgba(0, 0, 0, 0.8);
     border: 1px solid white;
-    z-index: 25;
+    z-index: 150;
 }
 
 .popover-body {
