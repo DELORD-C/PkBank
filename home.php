@@ -6,19 +6,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="shortcut icon" href="src/favicon.png" type="image/x-icon">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/modal.css">
     <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
-        crossorigin="anonymous">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js">
-    </script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
-        crossorigin="anonymous">
-    </script>
+    <script src="src/popper.js"></script>
+    <script src="src/tooltip.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/1.5.10/clipboard.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
     <title>Showdown</title>
 </head>
 
+<div class="black"></div>
 <body>
     <?php
     include_once('php/config.php');
@@ -80,7 +80,7 @@
     }
     ?>
     </ul>
-    <div class='teams container'>
+    <div class='teams'>
         <?php
     foreach($tiers as $key => $value) {
         $tier = $value['Tier'];
@@ -131,29 +131,35 @@
             $textt = preg_replace('/\n/', '<br/>', $text);
             $id = $team['ID'];
             echo "
-            <div class='col-lg-4 col-md-6 col-sm-12'>
-                <div class='team col-12'>
+            <div class='team'>
+                <div class='team__header'>
+                    <h3 class='name'>$nom</h3>
+                    <button class='team-btn modal-btn' target='modal-$nomm'>More</button>
+                    <button id='copy' class='team-btn copy-btn' target='$id' data-content='copied!'>Copy</button>
+                    <textarea id='$id' class='hidden' value='$text'>$text</textarea>
+                </div>
+                <div class='teamdisplay' id='$id'>
+                $sprites[0]
+                $sprites[1]
+                $sprites[2]
+                $sprites[3]
+                $sprites[4]
+                $sprites[5]
+                </div>
+            </div>
+            <div class='modal modal-$nomm'>
+                <div class='modalin team'>
                     <div class='team__header'>
                         <h3 class='name'>$nom</h3>
-                        <button class='team-btn' target='spoiler-$nomm'>Spoiler</button>
-                        <button id='copy' class='team-btn copy-btn' target='$id'>Copy</button>
-                        <textarea id='$id' class='hidden' value='$text'>$text</textarea>
+                        <button id='copy' class='team-btn copy-btn' target='$id' data-content='copied!'>Copy</button>
+                        <button class='team-btn modal-close'>Close</button>
                     </div>
-                    <div class='teamdisplay' id='$id'>
-                        $sprites[0]
-                        $sprites[1]
-                        $sprites[2]
-                        $sprites[3]
-                        $sprites[4]
-                        $sprites[5]
-                    </div>
-                    <div class='spoiler spoiler-$nomm'>
-                        $textt";
-                        if (isset($_SESSION['pass']) && $_SESSION['pass'] == 1) {
-                            echo "<br/><a href='home.php?del=$id' class='del-btn'><button class='delete'>Delete</button></a>";
-                        }
-                        echo "
-                    </div>
+                    <div class='modal-team'>
+                    $textt";
+                    if (isset($_SESSION['pass']) && $_SESSION['pass'] == 1) {
+                        echo "</div><br/><a href='home.php?del=$id' class='del-btn'><button class='delete'>Delete</button></a>";
+                    }
+                    echo "
                 </div>
             </div>
             ";

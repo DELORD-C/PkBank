@@ -32,30 +32,31 @@ a:-webkit-any-link {
 }
 
 .tab-content {
-    flex-wrap: wrap;
-	flex-direction: flex-start;
-	align-items: flex-start;
+    grid-template-columns: 1fr 1fr 1fr;
     width: 100%;
+}
 
+@media (max-width: 1650px) {
+    .tab-content {
+        grid-template-columns: 1fr 1fr;
+    }
 }
 
 @media (max-width: 1100px) {
+    .tab-content {
+        grid-template-columns: 1fr;
+    }
+
     .tab-list {
     overflow: auto;
     }
 }
 
 .team {
+    margin: 3px;
     background-color: rgba(0, 0, 0, 0.8);
-    padding: 14px;
+    padding: 10px;
     font-size: 1.1em;
-    width: 500px;
-    margin: 1px;
-}
-
-.spoiler {
-    display: none;
-    min-height: 1538px;
 }
 
 .form {
@@ -189,7 +190,7 @@ a:-webkit-any-link {
 .teamdisplay {
     display: flex;
     justify-content: space-around;
-    height: 120px;
+    margin: 20px 0;
 }
 
 .tab-list {
@@ -276,8 +277,6 @@ a:-webkit-any-link {
 .name {
     font-size: 1.2em;
     width: 100%;
-    max-height: 1.2em;
-    overflow: auto;
 }
 
 @media screen and (max-width: 560px)
@@ -315,11 +314,10 @@ a:-webkit-any-link {
     border: 5px solid white;
     color: black;
     border: none;
-    padding: 7px;
+    padding: 10px;
+    /* margin-top: 20px; */
     cursor: pointer;
     text-transform: uppercase;
-    position: relative;
-    bottom: 0;
 }
 
 .delete:hover {
@@ -330,6 +328,58 @@ a:-webkit-any-link {
     display: none;
 }
 
-.container {
-    grid-gap: 10px;
+
+.modal {
+    display: none;
+    /* background-color: rgba(0, 0, 0, 0.2); */
+    height: 60.1vh;
+    width: 40vw;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    top: 50vh;
+    left: 50vw;
+}
+
+.modal .team {
+    background-color: rgba(0, 0, 0, 0.85);
+}
+
+.modal .name {
+    font-size: 1.5em;
+    padding: 3px;
+}
+
+.modal-team {
+    overflow: auto;
+    height: 40vh;
+    margin: 20px 0;
+}
+
+.popover {
+    background-color: rgba(0, 0, 0, 0.8);
+    border: 1px solid white;
+    z-index: 25;
+}
+
+.popover-body {
+    color: white;
+}
+
+.bs-popover-right .arrow::after {
+    border-right-color: white;
+}
+
+.bs-popover-left .arrow::after {
+    border-left-color: white;
+}
+
+.black {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 50;
+    background-color: rgba(0, 0, 0, 0.7);
+    height: 100vh;
+    width: 100vw;
 }
