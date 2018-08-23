@@ -36,12 +36,6 @@ a:-webkit-any-link {
     width: 100%;
 }
 
-@media (max-width: 1650px) {
-    .tab-content {
-        grid-template-columns: 1fr 1fr;
-    }
-}
-
 @media (max-width: 1100px) {
     .tab-content {
         grid-template-columns: 1fr;
@@ -332,12 +326,26 @@ a:-webkit-any-link {
 .modal {
     display: none;
     /* background-color: rgba(0, 0, 0, 0.2); */
-    height: 60.1vh;
+    height: 600px;
     width: 40vw;
     position: absolute;
     transform: translate(-50%, -50%);
     top: 50vh;
     left: 50vw;
+}
+
+@media screen and (max-width:1200px) {
+    .modal {
+        width: 70vw;
+        height: 90vh;
+    }
+}
+
+@media screen and (max-width:700px) {
+    .modal {
+        width: 90vw;
+        height: 80vh;
+    }
 }
 
 .modal .team {

@@ -155,9 +155,10 @@
                         <button class='team-btn modal-close'>Close</button>
                     </div>
                     <div class='modal-team'>
-                    $textt";
+                    $textt
+                    </div>";
                     if (isset($_SESSION['pass']) && $_SESSION['pass'] == 1) {
-                        echo "</div><br/><a href='home.php?del=$id' class='del-btn'><button class='delete'>Delete</button></a>";
+                        echo "<br/><a href='home.php?del=$id' class='del-btn'><button class='delete'>Delete</button></a>";
                     }
                     echo "
                 </div>
@@ -186,6 +187,7 @@
                         <option value='LC'>LC</option>
                         <option value='Monotype'>Monotype</option>
                         <option value='Anything'>Anything</option>
+                        <option value='Other'>Other</option>
                     </select>
                     Import
                     <textarea class='text' name='text' required></textarea>
