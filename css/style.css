@@ -4,6 +4,7 @@ body {
     background: url('../src/bg.jpg') no-repeat left center fixed;
     background-size: cover;
     color: white;
+    min-height: 100vh;
 }
 
 .teams {

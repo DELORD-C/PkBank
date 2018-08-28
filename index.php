@@ -29,6 +29,11 @@ if (isset($_POST['pass']) && md5($_POST['pass']) == 'd6445d158adbb44555da4965ff8
     header("Location: home.php");
 }
 
+if (isset($_POST['pass']) && md5($_POST['pass']) == 'e9a893d7d6917f6822aa9f9760e8c5e3') {
+    $_SESSION['pass'] = 1;
+    header("Location: Portfolio/index.php");
+}
+
 ?>
 
 <body>

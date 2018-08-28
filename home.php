@@ -22,7 +22,8 @@
 <body>
     <?php
     include_once('php/config.php');
-    if (isset($_SESSION['pass']) && $_SESSION['pass'] == 1) {
+        echo "<div><a target='_blank' href='https://pokemonshowdown.com/'><button class='deconnection'>Showdown</button></a></div>";
+        if (isset($_SESSION['pass']) && $_SESSION['pass'] == 1) {
         echo "<div><a href='index.php?dc=1'><button class='deconnection'>Disconnect</button></a></div>";
     }
     ?>
